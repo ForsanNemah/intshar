@@ -1,6 +1,23 @@
  
 
 
+ <div class="text-center  mt-4 mb-4">
+
+<h1>
+
+
+شركاء النجاح 
+
+</h1>
+
+</div
+ 
+  <section id="parteners">
+    <div class="container">
+
+
+
+      <div class="row">
 
 
 
@@ -9,48 +26,102 @@
 
 
 
+      <?php
+$folderPath = 'parteners/'; // Replace 'path/to/folder' with the actual path to your folder
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap Image Slider</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
-  <style>
-    .carousel-item {
-      height: 300px; /* Set the desired height for the slider */
+$files = scandir($folderPath); // Get all files and directories from the folder
+
+$imageFiles = array();
+
+foreach ($files as $file) {
+    $filePath = $folderPath . '/' . $file;
+    
+    // Check if the file is a regular file and ends with a known image extension
+    if (is_file($filePath) && preg_match('/\.(jpg|jpeg|png|gif)$/i', $file)) {
+        $imageFiles[] = $file;
     }
-    .carousel-item img {
-      object-fit: cover;
-      height: 100%;
-      width: 100%;
-    }
-  </style>
-</head>
-<body>
-  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="image1.jpg" alt="Image 1">
-      </div>
-      <div class="carousel-item">
-        <img src="image2.jpg" alt="Image 2">
-      </div>
-      <div class="carousel-item">
-        <img src="image3.jpg" alt="Image 3">
-      </div>
+}
+
+// Output the image file names
+foreach ($imageFiles as $image) {
+    ///echo $image . "<br>";
+
+
+    echo '
+    
+    
+    
+    
+    <div class="col-md-4">
+    <div class="service">
+      <img src="parteners/'. $image.'" alt="Service 3" class="img-fluid">
+      <h3> </h3>
+      <p> </p>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    
+    
+    
+    
+    
+    
+    
+    
+    ';
+
+
+
+
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+     
+
+
+    </div>
+  </section>

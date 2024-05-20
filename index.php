@@ -318,29 +318,15 @@ if($derma_services==1){
 
 if($services_images==1){
 
-  echo '
   
-  
-  
-  
-  <div class="text-center  mt-4">
-
-  <h1>
- 
- 
- خدماتنا 
- 
-  </h1>
- 
- </div
- 
- 
-  
-  ';
 
   include "services_images.php";
 
 }
+
+
+
+include "parteners.php";
 
 
 ?>
@@ -517,7 +503,7 @@ if($footer==1){
     integrity="sha384-PASTE-INTEGRITY-HERE"
     crossorigin="anonymous"></script>
 
-    
+
 
 
 </body>
