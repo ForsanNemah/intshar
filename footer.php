@@ -276,7 +276,7 @@ foreach ($imageFiles as $image) {
   <div class="row  mt-4"  style="background-color: white;">
 
 
-  <div class="container">
+  <div class="container mt-4 mb-4">
     <div class="row">
       <div class="col">
         <a href="#"><i class="fab fa-facebook"></i></a>

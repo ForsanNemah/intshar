@@ -17,8 +17,8 @@
 	position:fixed;
 	width:60px;
 	height:60px;
-	bottom:60px;
-	left:20px;
+	bottom:100px;
+	left:10px;
 	background-color:#25d366;
 	color:#FFF;
 	border-radius:50px;
