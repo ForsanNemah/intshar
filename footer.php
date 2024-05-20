@@ -279,22 +279,22 @@ foreach ($imageFiles as $image) {
   <div class="container mt-4 mb-4">
     <div class="row">
       <div class="col">
-        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-lg fa-facebook"></i></a>
       </div>
       <div class="col">
-        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-lg fa-instagram"></i></a>
       </div>
       <div class="col">
-        <a href="#"><i class="fas fa-times"></i></a>
+        <a href="#"><i class="fas fa-lg fa-times"></i></a>
       </div>
       <div class="col">
-        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-lg fa-twitter"></i></a>
       </div>
       <div class="col">
-        <a href="#"><i class="fab fa-snapchat"></i></a>
+        <a href="#"><i class="fab fa-lg fa-snapchat"></i></a>
       </div>
       <div class="col">
-        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-lg fa-tiktok"></i></a>
       </div>
     </div>
   </div>
