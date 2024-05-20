@@ -102,8 +102,48 @@ echo $footer_des4;
         </a>
      
       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
         </div>
 
 
@@ -222,6 +262,55 @@ foreach ($imageFiles as $image) {
         </div>
       </div>
     </div>
+
+
+
+
+
+
+
+   
+
+
+
+  <div class="row  mt-4"  style="background-color: white;">
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </div>
+      <div class="col">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="col">
+        <a href="#"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="col">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="col">
+        <a href="#"><i class="fab fa-snapchat"></i></a>
+      </div>
+      <div class="col">
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
   </footer>
 
   

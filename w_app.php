@@ -17,7 +17,7 @@
 	position:fixed;
 	width:60px;
 	height:60px;
-	bottom:40px;
+	bottom:60px;
 	left:20px;
 	background-color:#25d366;
 	color:#FFF;
