@@ -273,31 +273,31 @@ foreach ($imageFiles as $image) {
 
 
 
-  <div class="row  mt-4"  style="background-color: white;">
+  <div class="row"  style="background-color: #2099f4;">
 
 
-  <div class="container mt-4 mb-4">
-    <div class="row">
-      <div class="col">
-        <a href="#"><i class="fab fa-lg fa-facebook"></i></a>
-      </div>
-      <div class="col">
-        <a href="#"><i class="fab fa-lg fa-instagram"></i></a>
-      </div>
-      <div class="col">
-        <a href="#"><i class="fas fa-lg fa-times"></i></a>
-      </div>
-      <div class="col">
-        <a href="#"><i class="fab fa-lg fa-twitter"></i></a>
-      </div>
-      <div class="col">
-        <a href="#"><i class="fab fa-lg fa-snapchat"></i></a>
-      </div>
-      <div class="col">
-        <a href="#"><i class="fab fa-lg fa-tiktok"></i></a>
-      </div>
+  <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <a href="#"><i class="fab fa-lg fa-facebook text-white"></i></a>
+    </div>
+    <div class="col-auto">
+      <a href="#"><i class="fab fa-lg fa-instagram text-white"></i></a>
+    </div>
+    <div class="col-auto">
+      <a href="#"><i class="fas fa-lg fa-times text-white"></i></a>
+    </div>
+    <div class="col-auto">
+      <a href="#"><i class="fab fa-lg fa-twitter text-white"></i></a>
+    </div>
+    <div class="col-auto">
+      <a href="#"><i class="fab fa-lg fa-snapchat text-white"></i></a>
+    </div>
+    <div class="col-auto">
+      <a href="#"><i class="fab fa-lg fa-tiktok text-white"></i></a>
     </div>
   </div>
+</div>
 
 
 

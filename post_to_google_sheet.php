@@ -75,19 +75,19 @@ echo $sheet_id."<br>";
 
 
 
-if(check_if_registered($phone,$sheet_id) ){
+if(1==2 ){
 
-echo "found";
+//echo "found";
 
 }
 else{
 
-    echo "not found ";
+    //echo "not found ";
 }
 
-die;
  
-if(check_if_registered($phone,$sheet_id)){
+ 
+if(1==2){
 
 
 
