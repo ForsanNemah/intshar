@@ -6,10 +6,11 @@ $website_name="
 ";
 
 
-$phone_main="966541000065";
+$phone_main="966568430828";
 
 $action_url="https://script.google.com/macros/s/AKfycbx_gtMOKo-QBPN5VaRp3A4nzWd_dNCArPCLRdqThgCoJ2tVh-ybi1nbhEas2yiuV8-F/exec";
 
+$sheet_url="https://docs.google.com/spreadsheets/d/15ubpqR4FwRw27laCgA71Ob6Xp1SkHgMdULFDnKpRbqo/edit?usp=sharing";
 
 $form1_des="
 احجز الان
@@ -91,6 +92,7 @@ $w_app_button=1;
 $api_notification=0;
 $ad_source="snap ";
 $header1=0;
+
 
 
 ?>

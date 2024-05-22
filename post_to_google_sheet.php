@@ -16,7 +16,7 @@ $branch1=$_POST['branch1'];
 $branch2=$_POST['branch2'];
 $location=$_POST['location'];
 
-echo  $branch1.$branch2;
+//echo  $branch1.$branch2;
 
 if (!empty($branch1)) {
 
@@ -38,7 +38,7 @@ $date = date('Y/m/d H:i:s');
 
 
 $whatsapp_link="wa.me/966".$phone;
-echo $name.$phone.$is_w_app;
+//echo $name.$phone.$is_w_app;
 
 
 
@@ -63,6 +63,85 @@ $curlHandle = curl_init($action_url);
 curl_setopt($curlHandle, CURLOPT_POSTFIELDS, $postParameter);
 curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER, false);
+
+
+include "check_if_registerd.php";
+
+$sheet_id = getGoogleSheetId($sheet_url);
+
+echo $phone."<br>"; 
+echo $sheet_id."<br>"; 
+///echo check_if_registered($phone,$sheet_id)."wwe";
+
+
+
+if(check_if_registered($phone,$sheet_id) ){
+
+echo "found";
+
+}
+else{
+
+    echo "not found ";
+}
+
+die;
+ 
+if(check_if_registered($phone,$sheet_id)){
+
+
+
+
+
+    echo '<script type="text/javascript">
+
+    var msg="هذا الرقم مسجل مسبقا ";   
+ 
+ 
+ 
+            
+ alert(msg);
+ 
+ //window.history.go(-1);
+ 
+ 
+ //window.location.replace("index.php");
+ 
+ </script>
+ 
+ ';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+else{
+
+
+
+
+
+
+
+
+
+    
 $curlResponse = curl_exec($curlHandle);
 curl_close($curlHandle);
 
@@ -124,11 +203,14 @@ alert(msg);
 //window.history.go(-1);
 
 
-window.location.replace("index.php");
+//window.location.replace("index.php");
 
 </script>
 
 ';
+
+}
+
 
 }
 
