@@ -40,21 +40,7 @@ include "info.php";
 
 
 
-  <?php
 
- 
-
-
-
-if($about_image==1){
-  include "about_image.php";
-
-}
- 
-
-
-
-?>
 
 
 
@@ -93,6 +79,43 @@ include "w_app_form.php";
 
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+
+ 
+
+
+
+if($about_image==1){
+  include "about_image.php";
+
+}
+ 
+
+
+
+?>
+
+
+
+
+
+
+
+
+
 
 
 <?php
