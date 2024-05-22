@@ -46,6 +46,28 @@ include "info.php";
 
 
 
+if($about_image==1){
+  include "about_image.php";
+
+}
+ 
+
+
+
+?>
+
+
+
+
+
+
+
+  <?php
+
+ 
+
+
+
 if($header1==1){
   include "logo_then_pic.php";
 

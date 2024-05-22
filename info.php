@@ -63,6 +63,10 @@ $footer_des3="
 
  <br>
 2051251848
+<br>
+info@intshar.net
+<br>
+966539811400
 ";
 
 
@@ -92,6 +96,7 @@ $w_app_button=1;
 $api_notification=0;
 $ad_source="snap ";
 $header1=0;
+$about_image=1;
 
 
 

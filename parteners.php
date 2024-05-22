@@ -72,7 +72,7 @@ echo '
 
 
     <div class="col-sm-6">
-      <img  data-myvariable="parteners/'.$file.'" src="parteners/'.$file.'" alt="Image 1" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal1">
+      <img   data-myvariable="parteners/'.$file.'" src="parteners/'.$file.'" alt="Image 1" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal1" >
     </div>
 
 
