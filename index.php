@@ -9,7 +9,7 @@ include "info.php";
 
 ?>
 
-<body>
+<body bgcolor="green">
 
 
 
