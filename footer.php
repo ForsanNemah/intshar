@@ -279,22 +279,22 @@ foreach ($imageFiles as $image) {
   <div class="container">
   <div class="row justify-content-center">
     <div class="col-auto">
-      <a href="https://www.facebook.com/intshar.ksa"><i class="fab fa-lg fa-facebook text-white"></i></a>
+      <a href="https://www.facebook.com/intshar.ksa" target="_blank"><i class="fab fa-lg fa-facebook text-white"></i></a>
     </div>
     <div class="col-auto">
-      <a href="https://www.instagram.com/intshar_ksa"><i class="fab fa-lg fa-instagram text-white"></i></a>
+      <a href="https://www.instagram.com/intshar_ksa" target="_blank"><i class="fab fa-lg fa-instagram text-white"></i></a>
     </div>
     <div class="col-auto">
-      <a href="#"><i class="fas fa-lg fa-times text-white"></i></a>
+      <a href="#"><i class="fas fa-lg fa-times text-white" target="_blank"></i></a>
     </div>
     <div class="col-auto">
-      <a href="https://x.com/intshar_ksa"><i class="fab fa-lg fa-twitter text-white"></i></a>
+      <a href="https://x.com/intshar_ksa" target="_blank"><i class="fab fa-lg fa-twitter text-white"></i></a>
     </div>
     <div class="col-auto">
-      <a href="#"><i class="fab fa-lg fa-snapchat text-white"></i></a>
+      <a href="#"><i class="fab fa-lg fa-snapchat text-white" target="_blank"></i></a>
     </div>
     <div class="col-auto">
-      <a href="https://www.tiktok.com/@intshar_ksa"><i class="fab fa-lg fa-tiktok text-white"></i></a>
+      <a href="https://www.tiktok.com/@intshar_ksa" target="_blank"><i class="fab fa-lg fa-tiktok text-white"></i></a>
     </div>
   </div>
 </div>

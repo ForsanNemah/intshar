@@ -18,7 +18,7 @@
 	width:60px;
 	height:60px;
 	bottom:100px;
-	left:10px;
+	right:10px;
 	background-color:#25d366;
 	color:#FFF;
 	border-radius:50px;

@@ -64,9 +64,12 @@ $footer_des3="
  <br>
 2051251848
 <br>
-info@intshar.net
+<a href= 'mailto:info@intshar.net' style='color: white;'>info@intshar.net</a>
+
 <br>
-966539811400
+
+<a href='tel:966539811400' style='color: white;'>966539811400</a>
+
 ";
 
 
@@ -93,7 +96,7 @@ $process=0;
 $services_images=1;
 $footer=1;
 $w_app_button=1;
-$api_notification=0;
+$api_notification=1;
 $ad_source="snap ";
 $header1=0;
 $about_image=1;
