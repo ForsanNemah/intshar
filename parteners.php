@@ -1,4 +1,14 @@
 
+
+
+<div id="customers_id" class="mb-4"  >
+
+<br>
+<br>
+</div>
+
+
+
 <div class="container mt-4" id="cases_section">
   <div class="row justify-content-center">
     <div class="col-lg-8 text-center">

@@ -28,6 +28,16 @@
         <li class="nav-item">
           <a class="nav-link" href="#services_id" onclick="toggleNavbar()">الخدمات</a>
         </li>
+
+
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="#customers_id" onclick="toggleNavbar()">عملاؤنا</a>
+        </li>
+
+
+
         <li class="nav-item">
           <a class="nav-link" href="#footer_id" onclick="toggleNavbar()">تواصل معنا</a>
         </li>

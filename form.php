@@ -54,7 +54,7 @@
 
             <div class="mb-3">
  
-              <input id="phn_form1" type="number" class="form-control" name="phone" placeholder="أدخل  رقم جوالك هنا " required>
+              <input id="phn_form1" type="number" class="form-control" name="phone" placeholder=" رقم الجوال " required>
             </div>
 
 
