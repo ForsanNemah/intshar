@@ -71,7 +71,7 @@ echo '
 
 
 
-    <div class="col-sm-6 col-lg-3" data-aos="zoom-in-up">
+    <div class="col-sm-6 col-lg-3" data-aos-duration="1500" data-aos="zoom-in-up">
       <img   data-myvariable="parteners/'.$file.'" src="parteners/'.$file.'" alt="Image 1" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal1" width="300" height="300" >
     </div>
 
