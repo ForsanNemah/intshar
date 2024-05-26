@@ -2,7 +2,8 @@
 
 
 
- <div class="text-center  mt-4">
+
+ <div class="text-center  mt-4" id="services_id" >
 
 <h1>
 
@@ -15,7 +16,7 @@
 
 
  
-  <section id="services">
+  <section >
     <div class="container">
 
 
@@ -55,7 +56,7 @@ foreach ($imageFiles as $image) {
     
     
     
-    <div class="col-md-4">
+    <div class="col-md-4" data-aos-duration="1500" data-aos="zoom-in-up">
     <div class="service">
       <img src="intshar_images/'. $image.'" alt="Service 3" class="img-fluid">
       <h3> </h3>

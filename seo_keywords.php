@@ -45,5 +45,5 @@ try {
     }
 } catch (Exception $e) {
     // Handle exceptions
-    echo 'Error: ' . $e->getMessage();
+    //echo 'Error: ' . $e->getMessage();
 }

@@ -1,4 +1,4 @@
-<div class="form-container" id="w_app_form">
+<div class="form-container" id="w_app_form" data-aos-duration="1500"  data-aos="zoom-in-up">
   <div class="row justify-content-center custom_row_margin">
     <div class="col-lg-6">
       <div class="card mt-5">

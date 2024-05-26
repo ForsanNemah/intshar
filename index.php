@@ -6,6 +6,7 @@
 
 include "head.php";
 include "info.php";
+include "nav.php";
 
 ?>
 
@@ -508,6 +509,7 @@ include "faq.php";
 
 if($footer==1){
   
+  include "map.php";
   include "footer.php";
 }
 
@@ -549,6 +551,12 @@ if($footer==1){
     crossorigin="anonymous"></script>
 
 
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+  AOS.init();
+</script>
 
 
 </body>

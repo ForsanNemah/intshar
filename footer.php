@@ -6,7 +6,7 @@
   </style>
 </head>
 <body>
-  <footer class="footer mt-4">
+  <footer class="footer mt-4" id="footer_id" data-aos-duration="1500"  data-aos="zoom-in-up"> 
     <div class="container">
       <div class="row">
 
