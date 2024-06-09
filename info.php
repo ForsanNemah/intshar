@@ -68,7 +68,7 @@ $footer_des3="
 <a href='tel:'.$phone_main.' style='color: white;'>$phone_main</a>
 
 <br>
-المملكة العربية السعودية-الخبر
+المملكة العربية السعودية
 ";
 
 
