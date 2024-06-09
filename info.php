@@ -59,10 +59,7 @@ $footer_des2="
 
 $footer_des3="
 
-سجل تجاري رقم 
-
- <br>
-2051251848
+ 
 <br>
 <a href= 'mailto:info@intshar.net' style='color: white;'>info@intshar.net</a>
 
