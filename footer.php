@@ -284,7 +284,7 @@ foreach ($imageFiles as $image) {
     <div class="col-auto">
       <a href="https://www.instagram.com/intshar_ksa" target="_blank"><i class="fab fa-lg fa-instagram text-white"></i></a>
     </div>
-    <div class="col-auto">
+    <div class="col-auto" hidden>
       <a href="#"><i class="fas fa-lg fa-times text-white" target="_blank"></i></a>
     </div>
     <div class="col-auto">
