@@ -1,6 +1,6 @@
 <style>
   body {
-    padding-top: 0px; /* Add padding to the top of the body to account for the fixed navbar */
+    padding-top: 50px; /* Add padding to the top of the body to account for the fixed navbar */
   }
   .navbar-nav .nav-link {
     color: #333; /* Set the text color of the navigation items to dark gray */
@@ -11,44 +11,39 @@
   }
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top ">
   <div class="container">
-    <a class="navbar-brand" href="#">قمة الإنتشار</a>
+    <a class="navbar-brand" href="../index.php">قمة الإنتشار</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.php" onclick="toggleNavbar()">الرئيسية</a>
+          <a class="nav-link" href="../index.php" onclick="toggleNavbar()">الرئيسية</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#about_id" onclick="toggleNavbar()">من نحن</a>
+          <a class="nav-link" href="../index.php#about_id" onclick="toggleNavbar()">من نحن</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#services_id" onclick="toggleNavbar()">الخدمات</a>
+          <a class="nav-link" href="../index.php#services_id" onclick="toggleNavbar()">الخدمات</a>
         </li>
 
-
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="#customers_id" onclick="toggleNavbar()">عملاؤنا</a>
-        </li>
 
 
 
         <li class="nav-item">
-          <a class="nav-link" href="#footer_id" onclick="toggleNavbar()">تواصل معنا</a>
+          <a class="nav-link" href="../index.php#customers_id" onclick="toggleNavbar()">عملاؤنا</a>
         </li>
 
 
 
+        <li class="nav-item">
+          <a class="nav-link" href="../index.php#footer_id" onclick="toggleNavbar()">تواصل معنا</a>
+        </li>
 
 
-
-
-
+ 
 
 
 
@@ -58,25 +53,10 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
 
-            <li><a class="dropdown-item" href="vd">تحميل الفيديوهات </a></li>
+            <li><a class="dropdown-item"  onclick="toggleNavbar()" href="#">تحميل الفيديوهات </a></li>
              
           </ul>
         </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
