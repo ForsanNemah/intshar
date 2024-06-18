@@ -1,6 +1,6 @@
 <div class="container my-5"  id="table_div">
     <div class="row justify-content-center">
-      <div class="col-md-8 text-center">
+      <div class="col-12 col-md-8 text-center">
        
        
         <table id="video_table_id" class="table table-bordered">
