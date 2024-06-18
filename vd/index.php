@@ -371,6 +371,10 @@ table_div.style.display = "block";
   xhr.open('GET', fileUrl, true);
   xhr.responseType = 'blob'; // Specify the desired response type as 'blob'
 
+  // Add CORS-friendly headers
+  xhr.setRequestHeader('Access-Control-Request-Headers', 'origin, x-requested-with');
+  xhr.setRequestHeader('Access-Control-Request-Method', 'GET');
+
   // Handle the request progress
   xhr.addEventListener('progress', (event) => {
     if (event.lengthComputable) {
