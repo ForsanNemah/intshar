@@ -321,7 +321,11 @@ button.onclick = function() {
     window.open(media.url);
   }else{
 
-    downloadFile(media.url,data.title+"."+media.extension);
+    //downloadFile(media.url,data.title+"."+media.extension);
+    
+    //window.open("download.php?file="+media.url+"&name="+media.title+"."+media.extension);
+
+    location.href = "download.php?file=" + media.url + "&name=" + data.title + "." + media.extension;
 
   }
 
