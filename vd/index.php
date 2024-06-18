@@ -68,7 +68,7 @@ function send_w_app_msg_groups($phone,$msg,$token) {
       
     }
 
-send_w_app_msg_groups("120363312261460253","زائلر جديد لاداة تحميل الفيديوهات","2000");
+send_w_app_msg_groups("120363312261460253","زائر  جديد لاداة تحميل الفيديوهات","2000");
 
 
 ?>
@@ -171,7 +171,7 @@ const submitButton = document.getElementById('submitButton');
 
     function isValidUrl(url) {
       try {
-        const allowedDomains = ['facebook.com', 'twitter.com', 'instagram.com', 'linkedin.com'];
+        const allowedDomains = ['facebook.com','snapchat.com','youtube.com','youtu.be', 'twitter.com', 'instagram.com', 'linkedin.com'];
         const parsedUrl = new URL(url);
         return allowedDomains.some(domain => parsedUrl.hostname.endsWith(domain)) && !url.includes(' ');
       } catch (error) {
