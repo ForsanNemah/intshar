@@ -1,4 +1,7 @@
 <?php
+
+
+//echo "sdfsfafaa";
 // set_time_limit(0);
 // require './YoutubeDownloader.php';
 
@@ -35,11 +38,11 @@ if (isset($_GET['file']) && isset($_GET['name'])) {
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_HEADER, 0);
         
-        /*
+        
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 
-*/
+
 
         // Execute cURL request
         $data = curl_exec($ch);

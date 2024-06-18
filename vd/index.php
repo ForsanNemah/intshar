@@ -308,6 +308,8 @@ cell3.innerHTML = media.extension;
 
 // Create a new button element with Bootstrap classes and a smaller download icon
 var button = document.createElement("button");
+button.id = media.type+media.quality+media.extension;
+
 button.className = "btn btn-success btn-sm";
 button.innerHTML = '<i class="fas fa-download fa-fw"></i> تنزيل';
 button.onclick = function() {
@@ -316,6 +318,11 @@ button.onclick = function() {
 
   //downloadFile(media.url,data.title);
   
+ 
+
+  //alert(media.type+media.quality+media.extension);
+
+
   if(media.quality=="Audio"){
 
     window.open(media.url);
@@ -325,7 +332,39 @@ button.onclick = function() {
     
     //window.open("download.php?file="+media.url+"&name="+media.title+"."+media.extension);
 
-    location.href = "download.php?file=" + media.url + "&name=" + data.title + "." + media.extension;
+    //button.innerHTML = '<i class="fas fa-download fa-fw"></i> جاري التنزيل';
+    //button.disabled = true;
+
+    document.getElementById(media.type+media.quality+media.extension).textContent = 'جاري التنزيل';
+    //location.href = "download.php?file=" + encodeURIComponent(media.url) + "&name=" + data.title + "." + media.extension;
+    fetch(`download.php?file=${encodeURIComponent(media.url)}&name=${data.title}.${media.extension}`, {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/octet-stream'
+  }
+})
+.then(response => {
+     document.getElementById(media.type+media.quality+media.extension).innerHTML = '<i class="fas fa-download fa-fw"></i> تنزيل';
+
+  if (response.ok) {
+    return response.blob();
+  } else {
+    throw new Error('Failed to download file');
+  }
+})
+.then(blob => {
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = `${data.title}.${media.extension}`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+})
+.catch(error => {
+  console.error(error);
+});
+    
 
   }
 
