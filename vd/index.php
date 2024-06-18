@@ -366,18 +366,13 @@ table_div.style.display = "block";
         function downloadFile(fileUrl, fileName) {
   fetch(fileUrl, {
     method: 'GET',
-    mode: 'cors', // Enable CORS handling
+    mode: 'no-cors', // Use 'no-cors' mode to bypass CORS restrictions
   })
     .then(response => {
-      if (response.ok) {
-        return response.blob();
-      } else {
-        throw new Error(`Error downloading file: ${response.status} - ${response.statusText}`);
-      }
-    })
-    .then(blob => {
+      // Since the response is opaque, we can't access the response details directly
+      // Instead, we can create a download link and initiate the file download
       const downloadLink = document.createElement('a');
-      downloadLink.href = URL.createObjectURL(blob);
+      downloadLink.href = fileUrl;
       downloadLink.download = fileName;
       document.body.appendChild(downloadLink);
       downloadLink.click();
