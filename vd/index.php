@@ -68,7 +68,21 @@ function send_w_app_msg_groups($phone,$msg,$token) {
       
     }
 
-send_w_app_msg_groups("120363312261460253","زائر  جديد لاداة تحميل الفيديوهات","2000");
+
+
+
+
+ 
+if (isset($_GET['source'])) {
+
+  $msg=" زائر  جديد لاداة تحميل الفيديوهات من ".$_GET['source'];
+  send_w_app_msg_groups("120363312261460253",$msg,"2000");
+  
+} else {
+
+  send_w_app_msg_groups("120363312261460253","زائر  جديد لاداة تحميل الفيديوهات","2000");
+  
+}
 
 
 ?>
