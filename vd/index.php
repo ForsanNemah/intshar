@@ -364,48 +364,29 @@ table_div.style.display = "block";
 
 
         function downloadFile(fileUrl, fileName) {
-  // Create a new XMLHttpRequest object
-  const xhr = new XMLHttpRequest();
-
-  // Set up the request
-  xhr.open('GET', fileUrl, true);
-  xhr.responseType = 'blob'; // Specify the desired response type as 'blob'
-
-  // Add CORS-friendly headers
-  xhr.setRequestHeader('Access-Control-Request-Headers', 'origin, x-requested-with');
-  xhr.setRequestHeader('Access-Control-Request-Method', 'GET');
-
-  // Handle the request progress
-  xhr.addEventListener('progress', (event) => {
-    if (event.lengthComputable) {
-      console.log(`Downloaded ${event.loaded} of ${event.total} bytes.`);
-    }
-  });
-
-  // Handle the request completion
-  xhr.addEventListener('load', () => {
-    if (xhr.status === 200) { // Check if the request was successful
-      const blob = xhr.response; // Get the response as a Blob object
+  fetch(fileUrl, {
+    method: 'GET',
+    mode: 'cors', // Enable CORS handling
+  })
+    .then(response => {
+      if (response.ok) {
+        return response.blob();
+      } else {
+        throw new Error(`Error downloading file: ${response.status} - ${response.statusText}`);
+      }
+    })
+    .then(blob => {
       const downloadLink = document.createElement('a');
       downloadLink.href = URL.createObjectURL(blob);
-      downloadLink.download = fileName; // Set the desired file name
+      downloadLink.download = fileName;
       document.body.appendChild(downloadLink);
-      downloadLink.click(); // Initiate the file download
-      document.body.removeChild(downloadLink); // Remove the download link
-    } else {
-      console.error(`Error downloading file: ${xhr.status} - ${xhr.statusText}`);
-    }
-  });
-
-  // Handle the request error
-  xhr.addEventListener('error', () => {
-    console.error('Error occurred during file download.');
-  });
-
-  // Send the request
-  xhr.send();
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    })
+    .catch(error => {
+      console.error(error);
+    });
 }
-
 
 
 
