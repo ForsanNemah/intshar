@@ -318,7 +318,7 @@ button.onclick = function() {
     fetch(`download.php?file=${encodeURIComponent(media.url)}&name=${data.title}.${media.extension}`, {
   method: 'GET',
   headers: {
-    'Content-Type': 'application/octet-stream'
+    
   }
 })
 .then(response => {
