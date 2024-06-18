@@ -307,7 +307,7 @@ button.onclick = function() {
     window.open(media.url);
   }else{
 
-    downloadFile(media.url,data.title);
+    downloadFile(media.url,data.title+"."+media.extension);
 
   }
 
@@ -349,51 +349,53 @@ table_div.style.display = "block";
 
 
 
-        function downloadFile(url, fileName) {
-  // Create an AJAX request
-  var xhr = new XMLHttpRequest();
+        function downloadFile(fileUrl, fileName) {
+  // Create a new XMLHttpRequest object
+  const xhr = new XMLHttpRequest();
 
-  // Set the request method and URL
-  xhr.open('GET', url, true);
+  // Set up the request
+  xhr.open('GET', fileUrl, true);
+  xhr.responseType = 'blob'; // Specify the desired response type as 'blob'
 
-  // Set the response type to 'arraybuffer' to handle binary data
-  xhr.responseType = 'arraybuffer';
-
-  // Add an event listener for the 'load' event
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      // Get the array buffer data from the response
-      var arrayBuffer = xhr.response;
-
-      // Convert the array buffer to a Blob
-      var blob = new Blob([arrayBuffer], { type: 'audio/mpeg' });
-
-      // Create a temporary link element
-      var a = document.createElement('a');
-      a.href = window.URL.createObjectURL(blob);
-      a.download = fileName;
-
-      // Append the link to the document
-      document.body.appendChild(a);
-
-      // Click the link to initiate the download
-      a.click();
-
-      // Remove the temporary link element
-      document.body.removeChild(a);
-    } else {
-      console.error('Error downloading file:', xhr.status);
+  // Handle the request progress
+  xhr.addEventListener('progress', (event) => {
+    if (event.lengthComputable) {
+      console.log(`Downloaded ${event.loaded} of ${event.total} bytes.`);
     }
-  };
+  });
 
-  // Add an error handler
-  xhr.onerror = function() {
-    console.error('Error downloading file:', xhr.status);
-  };
+  // Handle the request completion
+  xhr.addEventListener('load', () => {
+    if (xhr.status === 200) { // Check if the request was successful
+      const blob = xhr.response; // Get the response as a Blob object
+      const downloadLink = document.createElement('a');
+      downloadLink.href = URL.createObjectURL(blob);
+      downloadLink.download = fileName; // Set the desired file name
+      document.body.appendChild(downloadLink);
+      downloadLink.click(); // Initiate the file download
+      document.body.removeChild(downloadLink); // Remove the download link
+    } else {
+      console.error(`Error downloading file: ${xhr.status} - ${xhr.statusText}`);
+    }
+  });
+
+  // Handle the request error
+  xhr.addEventListener('error', () => {
+    console.error('Error occurred during file download.');
+  });
 
   // Send the request
   xhr.send();
 }
+
+
+
+
+
+
+
+
+
 
 function deleteAllRows(tableId) {
   // Get a reference to the table element
