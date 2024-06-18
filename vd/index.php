@@ -77,14 +77,14 @@ function send_w_app_msg_groups($phone,$msg,$token) {
       curl_setopt($curlHandle, CURLOPT_CONNECTTIMEOUT, 0); 
   
       $curlResponse = curl_exec($curlHandle);
-      echo $curlResponse."res";
+      //echo $curlResponse."res";
       curl_close($curlHandle);
   
   
       //print_r(curl_getinfo($curlHandle));
   
       if(curl_errno($curlHandle)){
-          echo 'Curl error: ' . curl_error($curlHandle);
+          //echo 'Curl error: ' . curl_error($curlHandle);
       }
       
     }
