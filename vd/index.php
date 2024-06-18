@@ -363,24 +363,29 @@ table_div.style.display = "block";
 
 
 
-        function downloadFile(fileUrl, fileName) {
-  fetch(fileUrl, {
-    method: 'GET',
-    mode: 'no-cors', // Use 'no-cors' mode to bypass CORS restrictions
-  })
-    .then(response => {
-      // Since the response is opaque, we can't access the response details directly
-      // Instead, we can create a download link and initiate the file download
-      const downloadLink = document.createElement('a');
-      downloadLink.href = fileUrl;
-      downloadLink.download = fileName;
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
-    })
-    .catch(error => {
-      console.error(error);
-    });
+        function downloadFile(file, name) {
+  // Create a new XMLHttpRequest object
+  var xhr = new XMLHttpRequest();
+
+  // Set up the GET request with the parameters
+  var url = "download.php?file=" + encodeURIComponent(file) + "&name=" + encodeURIComponent(name);
+
+  // Open the GET request with the SSL/TLS certificate verification disabled
+  xhr.open("GET", url, true, "", "", true);
+
+  // Set up the callback function to handle the response
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      // The request was successful, you can handle the response here
+      console.log(xhr.responseText);
+    } else if (xhr.readyState === 4 && xhr.status !== 200) {
+      // Handle the error case
+      console.error("Error downloading file:", xhr.status, xhr.statusText);
+    }
+  };
+
+  // Send the GET request
+  xhr.send();
 }
 
 
