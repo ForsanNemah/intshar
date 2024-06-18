@@ -1,6 +1,6 @@
 <style>
   body {
-    padding-top: 50px; /* Add padding to the top of the body to account for the fixed navbar */
+    padding-top: 0px; /* Add padding to the top of the body to account for the fixed navbar */
   }
   .navbar-nav .nav-link {
     color: #333; /* Set the text color of the navigation items to dark gray */
