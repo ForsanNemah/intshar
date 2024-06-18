@@ -21,30 +21,9 @@ function send_w_app_msg_groups($phone,$msg,$token) {
 
     
 
-  echo "w_api start 2";
-  
-  
-  
+  //echo "w_api start 2";
   
    
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
