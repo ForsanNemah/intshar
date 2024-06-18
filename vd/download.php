@@ -26,7 +26,7 @@
 // <?php
 if (isset($_GET['file']) && isset($_GET['name'])) {
     $fileUrl = urldecode($_GET['file']);
-    $fileName = $_GET['name'];
+    $fileName = urldecode( $_GET['name']   );
 
     // Check if the URL is valid
     if (filter_var($fileUrl, FILTER_VALIDATE_URL)) {
