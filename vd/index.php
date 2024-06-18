@@ -185,7 +185,7 @@ const submitButton = document.getElementById('submitButton');
 
     function isValidUrl(url) {
       try {
-        const allowedDomains = ['facebook.com','snapchat.com','youtube.com','youtu.be', 'twitter.com', 'instagram.com', 'linkedin.com'];
+        const allowedDomains = ['facebook.com','snapchat.com','youtube.com','youtu.be', 'twitter.com', 'instagram.com', 'linkedin.com','tiktok.com'];
         const parsedUrl = new URL(url);
         return allowedDomains.some(domain => parsedUrl.hostname.endsWith(domain)) && !url.includes(' ');
       } catch (error) {
@@ -244,7 +244,7 @@ const submitButton = document.getElementById('submitButton');
 
 if( 'message' in data){
 
-  alert("messge found");
+  alert("حاول مرة اخرى ");
   //notify me please 
   return 0;
 
