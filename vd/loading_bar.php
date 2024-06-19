@@ -1,15 +1,6 @@
  
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            margin: 0;
-        }
+       
 
         #progress-container {
             width: 80%;
@@ -44,16 +35,56 @@
     </style>
  
 
-     <h1>Downloading Video</h1>
+  
+
+
+
+
+
+    <div class="container col-12"  id="progress_bar_div_id">
+    <div class="row justify-content-center">
+      
+
+ 
     <div id="progress-container">
         <div id="progress-bar">
             <div id="progress">0%</div>
         </div>
-        <div id="status">Starting download...</div>
+     
     </div>
-    <script>
-
-
-       
-    </script>
  
+  
+
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div class="container col-12" >
+    <div class="row justify-content-center">
+      
+
+ <center>
+ <div id="status"></div>
+ </center>
+  
+
+  
+
+
+
+
+
+    </div>
+  </div>

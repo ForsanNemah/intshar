@@ -11,81 +11,6 @@
 
   </title>
 
-<?php
-
-
-
-
-function send_w_app_msg_groups($phone,$msg,$token) {
-
-
-    
-
-  //echo "w_api start 2";
-  
-   
-  
-  
-  
-  //echo $phone.$msg.$token;
-  
-  
-  
-  /*
-      $postParameter = array(
-          
-          
-          'phn' => $phone,
-          'token' => $token,
-          'msg' => $msg
-          
-      );
-  
-      */
-  
-  
-      $postParameter="phn=".$phone."&msg=".$msg."&token=".$token;
-      
-      $curlHandle = curl_init("http://alamerms.com/send-text-group");
-      curl_setopt($curlHandle, CURLOPT_POST, true);
-      curl_setopt($curlHandle, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
-      curl_setopt($curlHandle, CURLOPT_POSTFIELDS, $postParameter);
-      curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
-      curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER,false);
-      curl_setopt($curlHandle, CURLOPT_PORT, 2000);
-      curl_setopt($curlHandle, CURLOPT_CONNECTTIMEOUT, 0); 
-  
-      $curlResponse = curl_exec($curlHandle);
-      //echo $curlResponse."res";
-      curl_close($curlHandle);
-  
-  
-      //print_r(curl_getinfo($curlHandle));
-  
-      if(curl_errno($curlHandle)){
-          //echo 'Curl error: ' . curl_error($curlHandle);
-      }
-      
-    }
-
-
-
-
-
- 
-if (isset($_GET['source'])) {
-
-  $msg=" زائر  جديد لاداة تحميل الفيديوهات من ".$_GET['source'];
-  send_w_app_msg_groups("120363312261460253",$msg,"2000");
-  
-} else {
-
-  send_w_app_msg_groups("120363312261460253","زائر  جديد لاداة تحميل الفيديوهات","2000");
-  
-}
-
-
-?>
  
 
 
@@ -108,9 +33,11 @@ include "nav.php";
 
   <?php
 
+
 include "hero.php";
-//include "loading_bar.php";
+include "loading_bar.php";
 include "video_view.php";
+include "w_api_notifi.php";
 
 ?>
 
@@ -138,6 +65,15 @@ include "video_view.php";
 
 var table_div = document.getElementById("table_div");
 table_div.style.display = "none";
+
+
+
+
+
+var progress_bar_div_id = document.getElementById("progress_bar_div_id");
+progress_bar_div_id.style.display = "none";
+
+
 
 const submitButton = document.getElementById('submitButton');
 
@@ -286,25 +222,30 @@ cell1.innerHTML = media.type;
 cell2.innerHTML = media.quality;
 cell3.innerHTML = media.extension;
 
+var current_row_id=media.type+media.quality+media.extension+i;
+
 // Create a new button element with Bootstrap classes and a smaller download icon
 var button = document.createElement("button");
 
 var ahef = document.createElement("a");
 ahef.href =media.url;
-ahef.innerHTML = '<i class="fas fa-download fa-fw"></i> نسخ';
+ahef.innerHTML = 'فتح';
 cell5.appendChild(ahef);
 
-button.id = media.type+media.quality+media.extension;
+button.id = current_row_id;
 
 button.className = "btn btn-success btn-sm";
 button.innerHTML = '<i class="fas fa-download fa-fw"></i> تنزيل';
+
+
+
 button.onclick = function() {
   // Add button click functionality here
   console.log("Download button clicked!");
 
   //downloadFile(media.url,data.title);
   
- 
+  
 
   //alert(media.type+media.quality+media.extension);
 
@@ -314,7 +255,7 @@ button.onclick = function() {
     window.open(media.url);
   }else{
 
-    downloadFile(media.url,data.title+"."+media.extension);
+    downloadFile(media.url,data.title+"."+media.extension,current_row_id);
     
     //window.open("download.php?file="+media.url+"&name="+media.title+"."+media.extension);
 
@@ -322,7 +263,7 @@ button.onclick = function() {
     //button.disabled = true;
 
    
-    document.getElementById(media.type+media.quality+media.extension).textContent = 'جاري التنزيل';
+    document.getElementById(cuurent_row_id).textContent = 'جاري التنزيل';
     //location.href = "download.php?file=" + encodeURIComponent(media.url) + "&name=" + data.title + "." + media.extension;
 
     /*
@@ -366,10 +307,25 @@ button.onclick = function() {
 
 };
 
+
 // Add the button to the fourth cell
+
+
+
+
+
+
+
+
+
+
+
+
+
 cell4.appendChild(button);
 
 table_div.style.display = "block";
+
 
 }
 
@@ -399,10 +355,10 @@ table_div.style.display = "block";
 
 
 
-        function downloadFile(file, name) {
+        function downloadFile(file, name,current_download_button_id) {
   // Create a new XMLHttpRequest object
  
-
+  progress_bar_div_id.style.display = "block";
   
   var videoUrl =file;
             var xhr = new XMLHttpRequest();
@@ -432,7 +388,8 @@ table_div.style.display = "block";
                     a.click();
                     window.URL.revokeObjectURL(url);
                     var status = document.getElementById('status');
-                    status.textContent = 'Download complete!';
+                    status.textContent = 'تم التنزيل بنجاح!';
+                     document.getElementById(current_download_button_id).innerHTML = '<i class="fas fa-download fa-fw"></i> تنزيل';
                 }
             };
 
@@ -488,6 +445,25 @@ function deleteAllRows(tableId) {
 
   <script>
 AOS.init();
+
+
+
+
+
+
+// Add a click event listener to buttons with the 'my-button' class
+document.querySelectorAll('.table_rows_button').forEach(button => {
+  button.addEventListener('click', (event) => {
+    // Get the ID of the clicked button
+    const clickedButtonId = event.target.id;
+    console.log(`Clicked button ID: ${clickedButtonId}`);
+    alert(clickedButtonId);
+
+
+  });
+});
+
+
 </script>
 
 </html>
@@ -498,3 +474,7 @@ body {
     font-family: 'Tajawal';font-size: 22px;
 }
 </style>
+
+
+
+
