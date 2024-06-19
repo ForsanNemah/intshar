@@ -394,7 +394,11 @@ table_div.style.display = "block";
             };
 
             xhr.onerror = function () {
-                alert('Failed to download video.');
+                //alert('Failed to download video.');
+
+                window.open(file);
+
+                
             };
 
             xhr.send();
