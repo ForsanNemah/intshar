@@ -109,6 +109,7 @@ include "nav.php";
   <?php
 
 include "hero.php";
+//include "loading_bar.php";
 include "video_view.php";
 
 ?>
@@ -163,7 +164,7 @@ const submitButton = document.getElementById('submitButton');
 
     function isValidUrl(url) {
       try {
-        const allowedDomains = ['facebook.com','snapchat.com','youtube.com','youtu.be', 'twitter.com', 'instagram.com', 'linkedin.com','tiktok.com'];
+        const allowedDomains = ['googleapis.com','facebook.com','snapchat.com','youtube.com','youtu.be', 'twitter.com', 'instagram.com', 'linkedin.com','tiktok.com'];
         const parsedUrl = new URL(url);
         return allowedDomains.some(domain => parsedUrl.hostname.endsWith(domain)) && !url.includes(' ');
       } catch (error) {
@@ -279,6 +280,7 @@ var cell1 = newRow.insertCell(0);
 var cell2 = newRow.insertCell(1);
 var cell3 = newRow.insertCell(2);
 var cell4 = newRow.insertCell(3);
+var cell5 = newRow.insertCell(4);
 
 cell1.innerHTML = media.type;
 cell2.innerHTML = media.quality;
@@ -286,6 +288,12 @@ cell3.innerHTML = media.extension;
 
 // Create a new button element with Bootstrap classes and a smaller download icon
 var button = document.createElement("button");
+
+var ahef = document.createElement("a");
+ahef.href =media.url;
+ahef.innerHTML = '<i class="fas fa-download fa-fw"></i> نسخ';
+cell5.appendChild(ahef);
+
 button.id = media.type+media.quality+media.extension;
 
 button.className = "btn btn-success btn-sm";
@@ -306,15 +314,18 @@ button.onclick = function() {
     window.open(media.url);
   }else{
 
-    //downloadFile(media.url,data.title+"."+media.extension);
+    downloadFile(media.url,data.title+"."+media.extension);
     
     //window.open("download.php?file="+media.url+"&name="+media.title+"."+media.extension);
 
     //button.innerHTML = '<i class="fas fa-download fa-fw"></i> جاري التنزيل';
     //button.disabled = true;
 
+   
     document.getElementById(media.type+media.quality+media.extension).textContent = 'جاري التنزيل';
     //location.href = "download.php?file=" + encodeURIComponent(media.url) + "&name=" + data.title + "." + media.extension;
+
+    /*
     fetch(`download.php?file=${encodeURIComponent(media.url)}&name=${data.title}.${media.extension}`, {
   method: 'GET',
   headers: {
@@ -325,7 +336,8 @@ button.onclick = function() {
      document.getElementById(media.type+media.quality+media.extension).innerHTML = '<i class="fas fa-download fa-fw"></i> تنزيل';
 
   if (response.ok) {
-    return response.blob();
+    //return response.blob();
+    return 0;
   } else {
     throw new Error('Failed to download file');
   }
@@ -343,6 +355,9 @@ button.onclick = function() {
   console.error(error);
 });
     
+*/
+
+
 
   }
 
@@ -386,27 +401,47 @@ table_div.style.display = "block";
 
         function downloadFile(file, name) {
   // Create a new XMLHttpRequest object
-  var xhr = new XMLHttpRequest();
+ 
 
-  // Set up the GET request with the parameters
-  var url = "download.php?file=" + encodeURIComponent(file) + "&name=" + encodeURIComponent(name);
+  
+  var videoUrl =file;
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', videoUrl, true);
+            xhr.responseType = 'blob';
 
-  // Open the GET request with the SSL/TLS certificate verification disabled
-  xhr.open("GET", url, true, "", "", true);
+            xhr.onprogress = function (e) {
+                if (e.lengthComputable) {
+                    var percentComplete = (e.loaded / e.total) * 100;
+                    var progress = document.getElementById('progress');
+                    var status = document.getElementById('status');
+                    progress.style.width = percentComplete + '%';
+                    progress.textContent = Math.round(percentComplete) + '%';
+                    status.textContent = 'Downloaded ' + Math.round(e.loaded / 1024 / 1024) + ' MB of ' + Math.round(e.total / 1024 / 1024) + ' MB';
+                }
+            };
 
-  // Set up the callback function to handle the response
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      // The request was successful, you can handle the response here
-      console.log(xhr.responseText);
-    } else if (xhr.readyState === 4 && xhr.status !== 200) {
-      // Handle the error case
-      console.error("Error downloading file:", xhr.status, xhr.statusText);
-    }
-  };
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var blob = xhr.response;
+                    var url = window.URL.createObjectURL(blob);
+                    var a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download =name;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    var status = document.getElementById('status');
+                    status.textContent = 'Download complete!';
+                }
+            };
 
-  // Send the GET request
-  xhr.send();
+            xhr.onerror = function () {
+                alert('Failed to download video.');
+            };
+
+            xhr.send();
+
 }
 
 
