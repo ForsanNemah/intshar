@@ -62,15 +62,78 @@ function send_w_app_msg_groups($phone,$msg,$token) {
 
  
 if (isset($_GET['source'])) {
+ 
 
   $msg=" زائر  جديد لاداة تحميل الفيديوهات من ".$_GET['source'];
-  send_w_app_msg_groups("120363312261460253",$msg,"2000");
+  ///send_w_app_msg_groups("120363312261460253",$msg,"2000");
+
+
+  
+
+
+
+
   
 } else {
 
-  send_w_app_msg_groups("120363312261460253","زائر  جديد لاداة تحميل الفيديوهات","2000");
+  //send_w_app_msg_groups("120363312261460253","زائر  جديد لاداة تحميل الفيديوهات","2000");
   
 }
+
+
+
+
+
+
+
+
+
+
+
+ 
+if (isset($_GET['url'])) {
+
+  $url=$_GET['url'];
+
+ 
+  ///send_w_app_msg_groups("120363312261460253",$msg,"2000");
+
+
+  echo '<script type="text/javascript">
+
+ 
+
+  document.getElementById("urlInput").value ="'.$url.'";
+alert("before click ");
+
+document.getElementById("submitButton").click();
+alert("after click ");
+ 
+ 
+          
+ 
+
+ 
+
+
+ 
+
+</script>
+
+';
+
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 ?>

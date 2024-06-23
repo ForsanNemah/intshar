@@ -37,7 +37,7 @@ include "nav.php";
 include "hero.php";
 include "loading_bar.php";
 include "video_view.php";
-include "w_api_notifi.php";
+//include "w_api_notifi.php";
 
 ?>
 
